@@ -6,7 +6,6 @@ A simple backend service built with FastAPI that accepts and retrieves trade ord
 
 - **POST /orders:** Submit a trade order (symbol, price, quantity, order type).
 - **GET /orders:** Retrieve all submitted orders.
-- **WebSocket /ws:** Optional endpoint for real-time order updates.
 - **SQLite:** Simple database for order storage.
 - **Docker:** Containerized application.
 - **CI/CD:** Automated testing and deployment via GitHub Actions.
@@ -24,3 +23,11 @@ A simple backend service built with FastAPI that accepts and retrieves trade ord
 1. Install dependencies:
    ```bash
    pip install -r requirements.txt
+   
+2. Run the FastAPI server.
+   ```bash
+   uvicorn main:app --reload
+   
+3. Access the API docs
+   ```bash
+   http://127.0.0.1:8000/docs
