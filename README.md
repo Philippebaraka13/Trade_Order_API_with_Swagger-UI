@@ -32,3 +32,40 @@ A simple backend service built with FastAPI that accepts and retrieves trade ord
 3. Access the API docs
    ```bash
    http://127.0.0.1:8000/docs
+
+
+# Project Architecture
+
+This project leverages a modern stack to deliver a scalable and maintainable application. Below is an overview of the architecture and key components:
+
+## Backend
+
+- **FastAPI**  
+  - Serves as the backbone for REST endpoints.
+  - Supports optional WebSocket communication for real-time features.
+
+## Database
+
+- **SQLite**  
+  - Utilized as a local file for storing orders.
+  - For production environments, consider using **PostgreSQL** for enhanced performance and scalability.
+
+## Containerization
+
+- **Docker**  
+  - Containerizes the FastAPI application.
+  - Ensures consistency across development and production environments.
+
+## Production Environment
+
+- **AWS EC2 (Ubuntu)**  
+  - Hosts the Docker container.
+  - Provides a reliable infrastructure for deployment.
+
+## CI/CD Pipeline
+
+- **GitHub Actions**  
+  - **Testing:** Runs tests on all pull requests to ensure code quality.
+  - **Docker Integration:** Builds and pushes Docker images to Docker Hub.
+  - **Deployment:** SSHs into the EC2 instance for seamless deployment.
+
