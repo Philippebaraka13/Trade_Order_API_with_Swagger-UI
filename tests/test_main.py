@@ -2,7 +2,8 @@
 import os
 import pytest
 from fastapi.testclient import TestClient
-from ..main import app, DATABASE, init_db
+from main import app, DATABASE, init_db
+
 # Triggering CI/CD
 client = TestClient(app)
 
