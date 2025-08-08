@@ -1,4 +1,3 @@
-# .github/workflows/deploy.yml
 name: CI/CD Pipeline
 
 on:
@@ -23,7 +22,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run tests
-        run: pytest
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
+          pytest
 
       - name: Build Docker image
         run: docker build -t philippebaraka13/my-backend:latest .
