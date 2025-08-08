@@ -11,6 +11,7 @@ def setup_database():
     init_db()
     yield
 
+
 def test_landing_page():
     response = client.get("/")
     assert response.status_code == 200
